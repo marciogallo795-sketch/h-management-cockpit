@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H! Management Cockpit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">H!</div>
+        <div><strong>Management Cockpit</strong><span>Commercial • Delivery • Growth • Cash</span></div>
+      </div>
+      <nav class="nav" id="nav">
+        <button class="nav-item active" data-view="dashboard">Cockpit</button>
+        <button class="nav-item" data-view="journey">Oportunidades & Projetos</button>
+        <button class="nav-item" data-view="cash">Caixa</button>
+        <button class="nav-item" data-view="meeting">Modo Reunião</button>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="exportBtn" class="secondary full">Exportar backup</button>
+        <label class="secondary full file-label">Importar backup<input id="importInput" type="file" accept=".json,application/json"></label>
+        <button id="resetBtn" class="ghost full">Limpar dados</button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">H! CONSULTORIA</p>
+          <h1 id="viewTitle">Cockpit</h1>
+          <p id="viewSubtitle">Visão executiva da jornada completa, do Radar à Expansão.</p>
+        </div>
+        <button id="primaryAction" class="primary">+ Nova oportunidade</button>
+      </header>
+      <section id="content"></section>
+    </main>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <div><p class="eyebrow">REGISTRO H!</p><h2 id="modalTitle">Nova oportunidade</h2></div>
+        <button id="closeModalBtn" class="icon-btn">×</button>
+      </div>
+      <form id="recordForm">
+        <div id="formBody"></div>
+        <div class="modal-actions">
+          <button type="button" id="cancelModalBtn" class="secondary">Cancelar</button>
+          <button type="submit" class="primary">Salvar registro</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
